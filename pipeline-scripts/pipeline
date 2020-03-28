@@ -93,7 +93,7 @@ pipeline {
                   label 'slave1'
          }
          steps{
-                  sh "docker build -t gvenkat/batch21webapp ."  
+                  sh "docker build -t shyam0/batch21webapp ."  
          }
      }
      
@@ -106,7 +106,7 @@ pipeline {
     	withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'dockerPassword', usernameVariable: 'dockerUser')]) {
     		sh "docker login -u ${dockerUser} -p ${dockerPassword}"
 	}
-        	sh "docker push gvenkat/batch21webapp"
+        	sh "docker push shyam0/batch21webapp"
     }
     }
 
